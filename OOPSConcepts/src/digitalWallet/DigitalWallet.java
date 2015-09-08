@@ -7,13 +7,28 @@ public class DigitalWallet {
   /* implement all the methods given below */
 
   /* Default constructor */
-  public DigitalWallet(String name ) {}
+	
+	String name;
+	Transaction tx = new Transaction();
+	double walletMoney;
+	
+	
+  public DigitalWallet(String name ) {
+	  this.name=name;
+  }
 
   /* Add money to the wallet */
-  public boolean addMoney(Transaction tx) { return false; }
+  public boolean addMoney(Transaction tx) {
+	  walletMoney = walletMoney+tx.getAmount();
+	  return true; 
+  }
 
   /* Return the balance in the wallet */
-  public double getBalance() {return 0.0;}
+  public double getBalance() {
+	  
+	  return walletMoney;
+	  
+  }
 
   /* Make a payment */
   public boolean pay(Transaction tx) { return false; }
