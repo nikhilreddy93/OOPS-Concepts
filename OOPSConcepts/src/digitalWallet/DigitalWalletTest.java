@@ -58,38 +58,38 @@ public class DigitalWalletTest {
     System.out.println("You have " + availableBalance + "in your wallet");
     System.out.println("Expected: 1000 - Actual: " + availableBalance);
 
-//    /*
-//     *  Pay a merchant from wallet
-//     *  Don't approve transaction if balance is less than amount
-//     */
-//
-//    /* Create an Transaction object and set the details using setter methods */
-//    txDate = new Date();
-//    tx = new Transaction();
-//    tx.setType("Payment");
-//    tx.setAmount(455);
-//    tx.setDate(txDate);
-//    tx.setDesc("Mobile Recharge");
-//    tx.setMerchant("Airtel");
-//    flag = wallet.pay(tx);
-//    if(flag) {
-//      System.out.println("Transaction Approved");
-//      System.out.println("Testcase Passed!");
-//    } else {
-//      System.out.println("Transaction Declined");
-//      System.out.println("Testcase Failed!");
-//    }
-//
-//    /*
-//     *  Check the balance in wallet
-//     *  Prev balance = 1000
-//     *  Paid 455, so balance - paid = 1000 - 455 = 545
-//     *  Add Rs. 40 for spending 455, so balance 545 + 40 = 585
-//     */
-//    availableBalance = wallet.getBalance();
-//    System.out.println("You have " + availableBalance + "in your wallet");
-//    System.out.println("Expected: 585 - Actual: " + availableBalance);
-//
+    /*
+     *  Pay a merchant from wallet
+     *  Don't approve transaction if balance is less than amount
+     */
+
+    /* Create an Transaction object and set the details using setter methods */
+    txDate = new Date();
+    tx = new Transaction();
+    tx.setType("Payment");
+    tx.setAmount(455);
+    tx.setDate(txDate);
+    tx.setDesc("Mobile Recharge");
+    tx.setMerchant("Airtel");
+    flag = wallet.pay(tx);
+    if(flag) {
+      System.out.println("Transaction Approved");
+      System.out.println("Testcase Passed!");
+    } else {
+      System.out.println("Transaction Declined");
+      System.out.println("Testcase Failed!");
+    }
+
+    /*
+     *  Check the balance in wallet
+     *  Prev balance = 1000
+     *  Paid 455, so balance - paid = 1000 - 455 = 545
+     *  Add Rs. 40 for spending 455, so balance 545 + 40 = 585
+     */
+    availableBalance = wallet.getBalance();
+    System.out.println("You have " + availableBalance + "in your wallet");
+    System.out.println("Expected: 585 - Actual: " + availableBalance);
+
 //    /*
 //     *  Pay a merchant from wallet
 //     *  Don't approve transaction if balance is less than amount
@@ -243,10 +243,23 @@ public class DigitalWalletTest {
 //
 //    /* Return the transactions for a given merchant */
 //    Transaction[] txs = wallet.getTransactions("Uber");
+//    for(int i=0;i<txs.length;i++){
+//    	System.out.println(txs[i].getDesc());
+//    	System.out.println(txs[i].getType());
+//    	System.out.println(txs[i].getMerchant());
+//    	
+//    }
+//    
 //    /* Expected output - 2 Uber trasactions objects should be array */
 //
 //    /* Return all the transactions */
 //    txs = wallet.getAllTransactions();
+//    for(int i=0;i<txs.length;i++){
+//    	System.out.println(txs[i].getDesc());
+////    	System.out.println(txs[i].getType());
+////    	System.out.println(txs[i].getMerchant());
+//    	
+//    }
 //    /* Expected 10 objects of the type transaction */
 
   }

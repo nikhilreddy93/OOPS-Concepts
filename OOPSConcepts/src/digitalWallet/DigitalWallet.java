@@ -1,5 +1,7 @@
 package digitalWallet;
 
+import java.util.ArrayList;
+
 public class DigitalWallet {
   
   /* Store all the Add Money, Pay and Reward transactions as transaction objects */
@@ -11,7 +13,7 @@ public class DigitalWallet {
 	String name;
 	Transaction tx = new Transaction();
 	double walletMoney;
-	
+	ArrayList<Transaction> transactions = new ArrayList<Transaction>();
 	
   public DigitalWallet(String name ) {
 	  this.name=name;
@@ -31,18 +33,48 @@ public class DigitalWallet {
   }
 
   /* Make a payment */
-  public boolean pay(Transaction tx) { return false; }
+  public boolean pay(Transaction tx) {
+	  if(tx.getAmount()<getBalance()){
+		  walletMoney = walletMoney-tx.getAmount()+40;
+		  transactions.add(tx);
+		  
+		  return true;
+	  }
+	  else
+	  return false; 
+  }
 
-  /* print statement */
-  public void printStatement() {}
-
-  /* Return the list of reward transactions */
-  public Transaction[] getRewardTransactions() {return null;}
-
-  /* Return all the transactions */
-  public Transaction[] getAllTransactions() {return null;}
-
-  /* Return the transactions that match the merchant name */
-  public Transaction[] getTransactions(String merchantName) {return null;}
-
+//  /* print statement */
+//  public void printStatement() {
+//	  
+//	  for(Transaction i:transactions){
+//		  System.out.println("Date : " + i.getDate() + ", Transaction Type : " + i.getType() + ", Description : " + i.getDesc() );
+//	  }
+//	  
+//  }
+//
+//  /* Return the list of reward transactions */
+//  public Transaction[] getRewardTransactions() {
+//	  @SuppressWarnings("unused")
+//	ArrayList<Transaction> rewardTransactions = new ArrayList<Transaction>();
+//	  return null;
+//  }
+//
+//  /* Return all the transactions */
+//  public Transaction[] getAllTransactions() {
+//	  
+//	  return transactions.toArray(new Transaction[transactions.size()]);
+//  }
+//
+//  /* Return the transactions that match the merchant name */
+//  public Transaction[] getTransactions(String merchantName) {
+//	  ArrayList<Transaction> merchantTransactions = new ArrayList<Transaction>();
+//	  for(Transaction i:transactions){
+//		  if(i.getMerchant().equals(merchantName)){
+//			  merchantTransactions.add(i);
+//		  }
+//	  }
+//	 //System.out.println("String  = " + list.toString());
+//	  return merchantTransactions.toArray(new Transaction[merchantTransactions.size()]);
+//  }
 }
