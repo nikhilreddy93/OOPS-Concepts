@@ -34,8 +34,9 @@ public class DigitalWallet {
 
   /* Make a payment */
   public boolean pay(Transaction tx) {
+	  int discount = (int) (tx.getAmount()/100)*10;
 	  if(tx.getAmount()<getBalance()){
-		  walletMoney = walletMoney-tx.getAmount()+40;
+		  walletMoney = walletMoney-tx.getAmount()+discount;
 		  transactions.add(tx);
 		  
 		  return true;
@@ -44,14 +45,14 @@ public class DigitalWallet {
 	  return false; 
   }
 
-//  /* print statement */
-//  public void printStatement() {
-//	  
-//	  for(Transaction i:transactions){
-//		  System.out.println("Date : " + i.getDate() + ", Transaction Type : " + i.getType() + ", Description : " + i.getDesc() );
-//	  }
-//	  
-//  }
+  /* print statement */
+  public void printStatement() {
+	  
+	  for(Transaction i:transactions){
+		  System.out.println("Date : " + i.getDate() + ", Transaction Type : " + i.getType() + ", Description : " + i.getDesc() );
+	  }
+	  
+  }
 //
 //  /* Return the list of reward transactions */
 //  public Transaction[] getRewardTransactions() {

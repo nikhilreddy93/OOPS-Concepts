@@ -90,36 +90,36 @@ public class DigitalWalletTest {
     System.out.println("You have " + availableBalance + "in your wallet");
     System.out.println("Expected: 585 - Actual: " + availableBalance);
 
-//    /*
-//     *  Pay a merchant from wallet
-//     *  Don't approve transaction if balance is less than amount
-//     */
-//    /* Create an Transaction object and set the details using setter methods */
-//    txDate = new Date();
-//    tx = new Transaction();
-//    tx.setType("Payment");
-//    tx.setAmount(280.50);
-//    tx.setDate(txDate);
-//    tx.setDesc("Taxi Ride");
-//    tx.setMerchant("Uber");
-//    flag = wallet.pay(tx);
-//    if(flag) {
-//      System.out.println("Transaction Approved");
-//      System.out.println("Testcase Passed!");
-//    } else {
-//      System.out.println("Transaction Declined");
-//      System.out.println("Testcase Failed!");
-//    }
-//
-//    /*
-//     *  Check the balance in wallet
-//     *  Prev balance = 585
-//     *  Paid 280.50, so balance - paid = 585 - 280.50 = 304.50
-//     *  Add Rs. 20 for spending 280.50, so balance 304.50 + 20 = 324.50
-//     */
-//    availableBalance = wallet.getBalance();
-//    System.out.println("You have " + availableBalance + "in your wallet");
-//    System.out.println("Expected: 324.50 - Actual: " + availableBalance);
+    /*
+     *  Pay a merchant from wallet
+     *  Don't approve transaction if balance is less than amount
+     */
+    /* Create an Transaction object and set the details using setter methods */
+    txDate = new Date();
+    tx = new Transaction();
+    tx.setType("Payment");
+    tx.setAmount(280.50);
+    tx.setDate(txDate);
+    tx.setDesc("Taxi Ride");
+    tx.setMerchant("Uber");
+    flag = wallet.pay(tx);
+    if(flag) {
+      System.out.println("Transaction Approved");
+      System.out.println("Testcase Passed!");
+    } else {
+      System.out.println("Transaction Declined");
+      System.out.println("Testcase Failed!");
+    }
+
+    /*
+     *  Check the balance in wallet
+     *  Prev balance = 585
+     *  Paid 280.50, so balance - paid = 585 - 280.50 = 304.50
+     *  Add Rs. 20 for spending 280.50, so balance 304.50 + 20 = 324.50
+     */
+    availableBalance = wallet.getBalance();
+    System.out.println("You have " + availableBalance + "in your wallet");
+    System.out.println("Expected: 324.50 - Actual: " + availableBalance);
 //
 //    /*
 //     *  Pay a merchant from wallet
@@ -239,7 +239,7 @@ public class DigitalWalletTest {
 //    /*
 //     * Expected Output: Print it for your convenience. Not graded.
 //     */
-//    wallet.printStatement();
+    wallet.printStatement();
 //
 //    /* Return the transactions for a given merchant */
 //    Transaction[] txs = wallet.getTransactions("Uber");
