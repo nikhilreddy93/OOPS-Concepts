@@ -244,9 +244,8 @@ public class DigitalWalletTest {
     /* Return the transactions for a given merchant */
     Transaction[] txs = wallet.getTransactions("Uber");
     for(int i=0;i<txs.length;i++){
-    	System.out.println(txs[i].getDesc());
-    	System.out.println(txs[i].getType());
-    	System.out.println(txs[i].getMerchant());
+    	System.out.println("Description : " + txs[i].getDesc() + ", Transaction Type : " + txs[i].getType() + ", Merchant Name : " + txs[i].getMerchant() );
+
     	
     }
     
@@ -255,9 +254,14 @@ public class DigitalWalletTest {
     /* Return all the transactions */
     txs = wallet.getAllTransactions();
     for(int i=0;i<txs.length;i++){
-    	System.out.println(txs[i].getDesc());
-    	System.out.println(txs[i].getType());
-    	System.out.println(txs[i].getMerchant());
+    	System.out.println("Description : " + txs[i].getDesc() + ", Transaction Type : " + txs[i].getType() + ", Merchant Name : " + txs[i].getMerchant() );
+    	
+    }
+    
+    /* Return all the reward transactions */
+    txs = wallet.getRewardTransactions();
+    for(int i=0;i<txs.length;i++){
+    	System.out.println("Description : " + txs[i].getDesc() + ", Transaction Type : " + txs[i].getType() + ", Merchant Name : " + txs[i].getMerchant() + ", Reward Amount : " + txs[i].getRewardAmount() );
     	
     }
     /* Expected 10 objects of the type transaction */

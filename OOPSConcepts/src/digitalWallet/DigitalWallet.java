@@ -14,6 +14,7 @@ public class DigitalWallet {
 	Transaction tx = new Transaction();
 	double walletMoney;
 	ArrayList<Transaction> transactions = new ArrayList<Transaction>();
+	ArrayList<Transaction> rewardTransactions = new ArrayList<Transaction>();
 	
   public DigitalWallet(String name ) {
 	  this.name=name;
@@ -38,7 +39,8 @@ public class DigitalWallet {
 	  if(tx.getAmount()<getBalance()){
 		  walletMoney = walletMoney-tx.getAmount()+discount;
 		  transactions.add(tx);
-		  
+		  tx.setRewardAmount(discount);
+		  rewardTransactions.add(tx);
 		  return true;
 	  }
 	  else
@@ -56,9 +58,9 @@ public class DigitalWallet {
 
   /* Return the list of reward transactions */
   public Transaction[] getRewardTransactions() {
-	  @SuppressWarnings("unused")
-	ArrayList<Transaction> rewardTransactions = new ArrayList<Transaction>();
-	  return null;
+	  
+	
+	  return rewardTransactions.toArray(new Transaction[rewardTransactions.size()]);
   }
 
   /* Return all the transactions */

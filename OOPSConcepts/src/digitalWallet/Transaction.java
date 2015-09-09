@@ -6,8 +6,17 @@ public class Transaction {
 	
 	
 	String type,desc,merchant;
-	double amount;
+	double amount,rewardAmount;
 	Date date;
+	
+	
+	public double getRewardAmount() {
+		return rewardAmount;
+	}
+	public void setRewardAmount(double rewardAmount) {
+		this.rewardAmount = rewardAmount;
+	}
+	
 	
 	
 	public void setDesc(String desc) {
