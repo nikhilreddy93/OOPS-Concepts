@@ -53,29 +53,29 @@ public class DigitalWallet {
 	  }
 	  
   }
-//
-//  /* Return the list of reward transactions */
-//  public Transaction[] getRewardTransactions() {
-//	  @SuppressWarnings("unused")
-//	ArrayList<Transaction> rewardTransactions = new ArrayList<Transaction>();
-//	  return null;
-//  }
-//
-//  /* Return all the transactions */
-//  public Transaction[] getAllTransactions() {
-//	  
-//	  return transactions.toArray(new Transaction[transactions.size()]);
-//  }
-//
-//  /* Return the transactions that match the merchant name */
-//  public Transaction[] getTransactions(String merchantName) {
-//	  ArrayList<Transaction> merchantTransactions = new ArrayList<Transaction>();
-//	  for(Transaction i:transactions){
-//		  if(i.getMerchant().equals(merchantName)){
-//			  merchantTransactions.add(i);
-//		  }
-//	  }
-//	 //System.out.println("String  = " + list.toString());
-//	  return merchantTransactions.toArray(new Transaction[merchantTransactions.size()]);
-//  }
+
+  /* Return the list of reward transactions */
+  public Transaction[] getRewardTransactions() {
+	  @SuppressWarnings("unused")
+	ArrayList<Transaction> rewardTransactions = new ArrayList<Transaction>();
+	  return null;
+  }
+
+  /* Return all the transactions */
+  public Transaction[] getAllTransactions() {
+	  
+	  return transactions.toArray(new Transaction[transactions.size()]);
+  }
+
+  /* Return the transactions that match the merchant name */
+  public Transaction[] getTransactions(String merchantName) {
+	  ArrayList<Transaction> merchantTransactions = new ArrayList<Transaction>();
+	  for(Transaction i:transactions){
+		  if(i.getMerchant().equals(merchantName)){
+			  merchantTransactions.add(i);
+		  }
+	  }
+	 //System.out.println("String  = " + list.toString());
+	  return merchantTransactions.toArray(new Transaction[merchantTransactions.size()]);
+  }
 }
