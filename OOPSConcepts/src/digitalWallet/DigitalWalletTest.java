@@ -89,6 +89,14 @@ public class DigitalWalletTest {
     availableBalance = wallet.getBalance();
     System.out.println("You have " + availableBalance + "in your wallet");
     System.out.println("Expected: 585 - Actual: " + availableBalance);
+    
+    
+    
+    
+    
+    
+    
+    
 
     /*
      *  Pay a merchant from wallet
@@ -253,6 +261,7 @@ public class DigitalWalletTest {
 
     /* Return all the transactions */
     txs = wallet.getAllTransactions();
+    System.out.println("All Transactions : ");
     for(int i=0;i<txs.length;i++){
     	System.out.println("Description : " + txs[i].getDesc() + ", Transaction Type : " + txs[i].getType() + ", Merchant Name : " + txs[i].getMerchant() );
     	
@@ -260,8 +269,10 @@ public class DigitalWalletTest {
     
     /* Return all the reward transactions */
     txs = wallet.getRewardTransactions();
+    System.out.println("Reward Transactions : ");
+    //System.out.println("length = " + txs.length);
     for(int i=0;i<txs.length;i++){
-    	System.out.println("Description : " + txs[i].getDesc() + ", Transaction Type : " + txs[i].getType() + ", Merchant Name : " + txs[i].getMerchant() + ", Reward Amount : " + txs[i].getRewardAmount() );
+    	System.out.println("Description : " + txs[i].getDesc() + ", Transaction Type : " + txs[i].getType() + ", Merchant Name : " + txs[i].getMerchant() + ", Reward Amount : "+txs[i].getAmount() );
     	
     }
     /* Expected 10 objects of the type transaction */

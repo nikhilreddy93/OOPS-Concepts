@@ -23,6 +23,7 @@ public class DigitalWallet {
   /* Add money to the wallet */
   public boolean addMoney(Transaction tx) {
 	  walletMoney = walletMoney+tx.getAmount();
+	  transactions.add(tx);
 	  return true; 
   }
 
@@ -35,12 +36,18 @@ public class DigitalWallet {
 
   /* Make a payment */
   public boolean pay(Transaction tx) {
-	  int discount = (int) (tx.getAmount()/100)*10;
+	  int x=(int)tx.getAmount()/100;
+	  double discount = x*10;
+	 
+	 // getRewardTransactions(tx1);
 	  if(tx.getAmount()<getBalance()){
+		  Transaction tx1 = new Transaction();
 		  walletMoney = walletMoney-tx.getAmount()+discount;
 		  transactions.add(tx);
-		  tx.setRewardAmount(discount);
-		  rewardTransactions.add(tx);
+		  tx1.setType("Reward");
+		  tx1.setAmount(discount);
+		  rewardTransactions.add(tx1);
+		  transactions.add(tx1);
 		  return true;
 	  }
 	  else
@@ -58,7 +65,7 @@ public class DigitalWallet {
 
   /* Return the list of reward transactions */
   public Transaction[] getRewardTransactions() {
-	  
+
 	
 	  return rewardTransactions.toArray(new Transaction[rewardTransactions.size()]);
   }
@@ -73,7 +80,7 @@ public class DigitalWallet {
   public Transaction[] getTransactions(String merchantName) {
 	  ArrayList<Transaction> merchantTransactions = new ArrayList<Transaction>();
 	  for(Transaction i:transactions){
-		  if(i.getMerchant().equals(merchantName)){
+		  if(!i.getType().equals("Reward") && i.getMerchant().equals(merchantName)){
 			  merchantTransactions.add(i);
 		  }
 	  }
